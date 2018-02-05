@@ -1,0 +1,42 @@
+1. git fork deeplearning4j repo
+https://deeplearning4j.org/buildinglocally
+
+Prerequisites:
+2. install maven (>3.3) (export JAVA_HOME in ./bashrc if neccessary), build-essentials, cmake (>3.2), libgompl
+     sudo apt-get purge maven maven2 maven3 cmake #remove the old version
+     or sudo apt-get purge -y maven
+     # install maven 3.3.9
+     download from https://maven.apache.org/download.cgi
+     sudo tar -zxf apache-maven-3.3.9-bin.tar.gz -C /usr/local/
+     sudo ln -s /usr/local/apache-maven-3.3.9/bin/mvn /usr/bin/mvn
+     # install cmake 3.X
+     sudo apt-get install software-properties-common
+     sudo add-apt-repository ppa:george-edison55/cmake-3.x
+     sudo apt-get update
+     sudo apt-get install cmake
+     # update to gcc 
+     sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+     sudo apt-get update
+     sudo apt-get install gcc-4.9 g++-4.9
+     sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.9
+
+
+3. install Intel MKL
+4. install openBLAS
+5. install ATLAS
+
+Installing the DL4J Stack:
+6. export LIBND4J_HOME, LD_LIBRARY_PATH (I didn't export MKL_THREADING_LAYER and LD_PRELOAD) READ this part carefully
+7. bash build-dl4j-stack.sh (a lot of warmings), install into maven local repository (~/.m2)
+
+8. Add 
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.16.12</version>
+                <scope>provided</scope>
+            </dependency>
+
+   to the pom.xml (top level) in deeplearning4j.
+
+   also add it to local project pom.xml

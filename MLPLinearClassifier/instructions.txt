@@ -1,0 +1,25 @@
+The main purpose of this screencast was to demonstrate 
+the writing of the java code needed to build a 
+Multi Layer Perceptron for Linear classification.
+
+Along the way I used a few shell commands that may 
+be of interest so they are included here for the sake 
+of completeness. 
+
+cut -c1 linear_data_train.csv
+cut -c1 linear_data_train.csv | sort |uniq -d
+gnuplot gnuplot.sh
+
+gnuplot may not be installed on your system. 
+It is free software and is easy to install.
+
+see http://www.gnuplot.info/
+
+I used it in this tutorial to quickly demonstrate the 
+structure of the data, it's use is not required. 
+
+If you use the examples from our github collection of examples 
+you will find this code with a graphical plot in the java code. 
+http://github.com/deeplearning4j/dl4j-examples.git
+
+

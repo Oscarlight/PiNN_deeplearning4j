@@ -1,0 +1,19 @@
+(!!! find a way to only update the file not to download the whole project, rebuild all is very time-consuming !!!)
+
+1. Fork from deeplearning4j
+2. (in local folder e.g. DL4J) git clone https://github.com/Oscarlight/deeplearning4j
+3. cd deeplearning4j (cd into cloned repo)
+4. (in case having the wrong one) git remote rm upstream
+5. git remote add upstream https://github.com/deeplearning4j/deeplearning4j
+
+## later only need to do
+6. git pull upstream master (download all from the remote master again)
+
+
+---------- rebuid them --------------
+1. add lombok dependence (see setup file in dl4j_prerequisite)
+2. bash build-dl4j-stack.sh (a lot of warmings, and long-time), install into maven local repository (~/.m2)
+3. test on my project
+4. recreate the project in eclipse (I only need to add test in deeplearning4j-core, so I only add deeplearning4j-core)
+	1) In deeplearning4j/deeplearning4j-core, run mvn eclipse:eclipse (fail for cuda)
+        2) go to eclipse -> import -> general -> existing project -> select deeplearning4j-core
